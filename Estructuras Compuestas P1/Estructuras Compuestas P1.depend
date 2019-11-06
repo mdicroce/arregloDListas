@@ -1,0 +1,28 @@
+# depslib dependency file v1.0
+1514140574 source:c:\users\usuario\desktop\estructuras compuestas p1\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1573045102 source:c:\users\usuario\desktop\estructuras compuestas p1\arreglosdlistas.c
+	"ArreglosDListas.h"
+
+1573044875 c:\users\usuario\desktop\estructuras compuestas p1\arreglosdlistas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1571919130 source:c:\users\usuario\desktop\tp6.1 - ec sistema de notas\registroarchivo.c
+	"registroArchivo.h"
+
+1571832493 c:\users\usuario\desktop\tp6.1 - ec sistema de notas\registroarchivo.h
+	<stdlib.h>
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+	"utilidades.h"
+
+1571670228 c:\users\usuario\desktop\tp6.1 - ec sistema de notas\utilidades.h
+	<stdlib.h>
+	<stdio.h>
+
