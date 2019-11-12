@@ -26,3 +26,22 @@
 	<stdlib.h>
 	<stdio.h>
 
+1573592587 source:c:\users\mtt1p\documents\github\arreglodlistas\estructuras compuestas p1\arreglosdlistas.c
+	"ArreglosDListas.h"
+
+1573594760 c:\users\mtt1p\documents\github\arreglodlistas\estructuras compuestas p1\arreglosdlistas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<windows.h>
+
+1573592606 source:c:\users\mtt1p\documents\github\arreglodlistas\estructuras compuestas p1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<string.h>
+	"ArreglosDListas.c"
+
+1573596243 c:\users\mtt1p\documents\github\arreglodlistas\estructuras compuestas p1\arreglosdlistas.c
+	"ArreglosDListas.h"
+

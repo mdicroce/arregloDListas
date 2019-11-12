@@ -42,19 +42,7 @@ nodo * buscarUltimo(nodo * lista)
     }
     return seg;
 }
-/*nodo * buscarNodo(char nombre[20], nodo * lista)
-{
-    nodo *seg = lista;
-    nodo *anterior;
-    if (lista != NULL)
-    {
-        while ((strcmp(nombre,seg->dato.nombre)!=0)&&(seg!= NULL))
-        {
-            seg= seg->siguiente;
-        }
-    }
-    return seg;
-}*/
+
 nodo * agregarFinal(nodo * lista, nodo * nuevoNodo)
 {
     nodo * seg;
@@ -73,62 +61,7 @@ nodo * agregarFinal(nodo * lista, nodo * nuevoNodo)
     }
     return lista;
 }
-/*nodo * borrarNodo(nodo * lista, char nombre[20])
-{
-    nodo *seg;
-    nodo *ante;
 
-    if ((lista != NULL) && (strcmp (lista->dato.nombre,nombre)==0))
-    {
-        nodo * aux = lista;
-        lista = lista -> siguiente;
-        free(aux);
-    }
-    else
-    {
-        seg = lista;
-        while ((strcmp(seg->dato.nombre,nombre)!=0)&&(seg != NULL))
-        {
-            ante = seg;
-            seg = seg->siguiente;
-        }
-        if (seg != NULL)
-        {
-            ante ->siguiente = seg ->siguiente;
-            free(seg);
-        }
-    }
-    return lista;
-}
-nodo * agregarEnOrden(nodo * lista, nodo * nuevoNodo)
-{
-
-    if (lista == NULL)
-    {
-        lista = nuevoNodo;
-    }
-    else
-    {
-        if (strcmp(lista->dato.nombre,nuevoNodo->dato.nombre)>0)
-        {
-            lista = agregarPpio(lista,nuevoNodo);
-        }
-        else
-        {
-            nodo *seg=lista->siguiente;
-            nodo *ante=lista;
-            while ((strcmp(ante->dato.nombre,nuevoNodo->dato.nombre)<0)&&(seg != NULL))
-            {
-                ante = seg;
-                seg = ante->siguiente;
-            }
-            nuevoNodo->siguiente = seg;
-            ante ->siguiente = nuevoNodo;
-        }
-    }
-
-    return lista;
-}*/
 nodo * borrarTodaLaLista(nodo * lista)
 {
     nodo*seg = lista;
@@ -141,17 +74,7 @@ nodo * borrarTodaLaLista(nodo * lista)
     }
     return seg;
 }
-/*int sumarEdadesLista(nodo * lista)
-{
-    int sumatoria=0;
-    nodo *seg;
-    while (seg != NULL)
-    {
-        sumatoria += seg->dato.edad;
-        seg = seg->siguiente;
-    }
-    return sumatoria;
-}*/
+
 void mostrarUnNodo(nodo * aux)
 {
 
@@ -177,13 +100,13 @@ notaAlumno cargarPersona (void)
 }
 int ingresarNotas (celda roro[], int dimension, registroArchivo dato)
 {
-    dimension = alta(roro,dato,dimension);
+    dimension=alta(roro,dato,dimension);
     return dimension;
 }
 int alta(celda roro[],registroArchivo dato,int dimension)
 {
     nodo *aux = crearNodo(dato);
-    int pos = buscaPosMateria(roro,dato.materia,dimension);
+    int pos = buscaPosMateria(roro,dato.idMateria,dimension);
     if (pos = -1)
     {
         dimension = agregarMateria(roro,dimension,dato.materia,dato.idMateria);
@@ -192,16 +115,20 @@ int alta(celda roro[],registroArchivo dato,int dimension)
     roro [pos].listaDeNotas = agregarPpio(roro[pos].listaDeNotas,aux);
     return dimension;
 }
-int buscaPosMateria (celda adl[],char materia[], int validos)
+int buscaPosMateria (celda adl[],int materia, int validos)
 {
     int pos = -1;
-    for (int i = 0;i<validos;i++)
+    int i=0;
+    do
     {
-        if (0==strcmp(materia,adl[i].materia))
+        printf("\n| %i || %i |",materia,adl[i].idMateria);
+        if (materia == adl[i].idMateria)
         {
+            printf("hola");
             pos = i;
         }
-    }
+        i++;
+    }while((i<validos)&&(adl[i].idMateria != materia));
     return pos;
 }
 int agregarMateria (celda adl[],int materia, char nombre[],int idMateria)
